@@ -16,16 +16,16 @@ public:
 	}
 
 	void addNode();
-	bool search(int rollno, Node** previous, Node** current);
+	bool search(int rollno, Node** salsabila, Node** novita);
 	bool listEmpty();
 	bool delNode();
 	void traverse();
 };
 void CircularLinkedList::addNode() { //write your answer here
 	Node* newNode = new Node(); //alokasikan memori untuk node baru
-	cout << "Masukan nomor baru"; //tetapkan nilai ke bidang data node baru
+	cout << "|Masukan nomor baru :|"; //tetapkan nilai ke bidang data node baru
 	cin >> newNode->rollNumber;
-	cout << "Masukan nama baru:";
+	cout << "|Masukan nama baru:|";
 	cin >> newNode->name;
 
 	if (listEmpty()) {
@@ -109,7 +109,7 @@ bool CircularLinkedList::delNode() { //write your answer here
 		return false;
 	}
 	if (novita == LAST) { // Deleting the last node
-		if (salsabila == LAST) { // Only one node in the list
+		if (novita == LAST) { // Only one node in the list
 			LAST = NULL;
 		}
 		else {
@@ -156,6 +156,7 @@ int main() {
 			}
 			case '2': {
 				obj.delNode();
+				break; 
 			}
 			case '3': {
 				obj.traverse();
